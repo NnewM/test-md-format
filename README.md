@@ -38,11 +38,11 @@ $$V_{\text{redundantMmongo}} = (0.2N + 40) + (0.6N + 120) + 24N = 24.8N + 160$$
 
 Вычтем избыточные поля из чистого объёма (данные чистого объёма — из сводной таблицы выше):
 
-$$V_{\text{clean\_mongo}} = V_{\text{pure\_mongo}} - V_{\text{redundant\_mongo}} = (2280N + 5280) - (24.8N + 160) = 2255.2N + 5120 \text{ байт}$$
+$$V_{\text{cleanmongo}} = V_{\text{puremongo}} - V_{\text{redundantmongo}} = (2280N + 5280) - (24.8N + 160) = 2255.2N + 5120 \text{ байт}$$
 
 Коэффициент избыточности при больших $N$:
 
-$$\frac{V_{\text{pure\_mongo}}}{V_{\text{clean\_mongo}}} \to \frac{2280N}{2280N - 25N} \approx 1.011$$
+$$\frac{V_{\text{pure\_mongo}}}{V_{\text{cleanmongo}}} \to \frac{2280N}{2280N - 25N} \approx 1.011$$
 
 MongoDB-модель избыточна на **≈ +1.1%** относительно минимально необходимого объёма данных.
 
