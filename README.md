@@ -1,14 +1,4 @@
-$$V_{\text{mongo}} = P \times 857 + N \times 6562 + B \times 918$$
-
-Подставляя P = N/20, B = 10:
-
-$$V_{\text{mongo}} = \frac{N}{20} \times 857 + N \times 6562 + 10 \times 918$$
-
-$$V_{\text{mongo}} = 42.85N + 6562N + 9180$$
-
-$$\boxed{V_{\text{mongo}} \approx 6605N + 9180 \text{ байт}}$$
-
-
+---
 
 **Объём логически избыточных данных (MongoDB):**
 
@@ -30,70 +20,30 @@ $$V_{type} = 2 \cdot 12 \cdot N = 24N$$
 
 **Итого:**
 
-$$V_{\text{redundantMongo}} = (0.2N + 40) + (0.6N + 120) + 24N = 24.8N + 160$$
+$$V_{\text{redundantMmongo}} = (0.2N + 40) + (0.6N + 120) + 24N = 24.8N + 160$$
 
 ---
-
 
 **Доля логической избыточности:**
 
-$$R_{\text{logicalMongo}} = \frac{V_{\text{redundantMongo}}}{V_{\text{pureMongo}}} = \frac{24.8N + 160}{2280N + 5280}$$
+$$R_{\text{logicalmongo}} = \frac{V_{\text{redundantmongo}}}{V_{\text{puremongo}}} = \frac{24.8N + 160}{2280N + 5280}$$
 
 При больших $N$:
 
-$$R_{\text{logicalMongo}} \to \frac{24.8}{2280} \approx 1.09\%$$
+$$R_{\text{logicalmongo}} \to \frac{24.8}{2280} \approx 1.09\%$$
 
 ---
+
 **Минимально необходимый объём данных (MongoDB):**
 
 Вычтем избыточные поля из чистого объёма (данные чистого объёма — из сводной таблицы выше):
 
-$$V_{\text{cleanMongo}} = V_{\text{pureMongo}} - V_{\text{redundantMongo}} = (2280N + 5280) - (24.8N + 160) = 2255.2N + 5120 \text{ байт}$$
+$$V_{\text{clean\_mongo}} = V_{\text{pure\_mongo}} - V_{\text{redundant\_mongo}} = (2280N + 5280) - (24.8N + 160) = 2255.2N + 5120 \text{ байт}$$
 
 Коэффициент раздутости при больших $N$:
 
-$$\frac{V_{\text{pureMongo}}}{V_{\text{cleanMongo}}} \to \frac{2280}{2255.2} \approx 1.011$$
+$$\frac{V_{\text{pure\_mongo}}}{V_{\text{clean\_mongo}}} \to \frac{2280}{2255.2} \approx 1.011$$
 
 MongoDB-модель избыточна на **≈ +1.1%** относительно минимально необходимого объёма данных.
----
-
-**Коэффициент раздутости (MongoDB):**
-
-Для сравнения вычислим суммарный объём только значений полей, без накладных расходов формата BSON (имена ключей, байты типа, служебные байты документа):
-
-$$V_{\text{pureMongo}} = \frac{N}{20} \cdot 524 + N \cdot 2254 + 10 \cdot 528 \approx 2280N + 5280 \text{ байт}$$
-
-где 524 — сумма значений полей одного документа `players` (включая status_history), 2254 — `games`, 528 — `bots`.
-
-Объём без избыточных полей:
-
-$$V_{\text{cleanMongo}} = V_{\text{pureMongo}} - V_{\text{redundantMongo}} = (2280N + 5280) - (24.8N + 160) = 2255.2N + 5120 \text{ байт}$$
-
-Коэффициент раздутости при больших $N$:
-
-$$\frac{V_{\text{pureMongo}}}{V_{\text{cleanMongo}}} \to \frac{2280}{2255.2} \approx 1.011$$
-
-MongoDB-модель избыточна на **≈ +1.1%** относительно минимально необходимого объёма данных.
-
-
----
-
-**Коэффициент раздутости (SQL):**
-
-Суммарный объём только значений полей, без накладных расходов SQL (заголовки строк, префиксы длины VARCHAR/TEXT):
-
-$$V_{\text{pureSql}} = \frac{N}{20} \cdot 348 + N \cdot 210 + 40N \cdot 44 + 10 \cdot 268 + (3.1N + 30) \cdot 96 \approx 2285N + 5560 \text{ байт}$$
-
-где 348 — сумма значений полей строки `players`, 210 — `games`, 44 — `moves`, 268 — `bots`, 96 — `status_history`.
-
-Объём без избыточных полей:
-
-$$V_{\text{cleanSql}} = V_{\text{pureSql}} - V_{\text{redundantSql}} = (2285N + 5560) - (197.2N + 280) = 2087.8N + 5280 \text{ байт}$$
-
-Коэффициент раздутости при больших $N$:
-
-$$\frac{V_{\text{pureSql}}}{V_{\text{cleanSql}}} \to \frac{2285}{2087.8} \approx 1.094$$
-
-SQL-модель избыточна на **≈ +9.4%** относительно минимально необходимого объёма данных. Основной вклад вносят суррогатные ключи `id` в таблице `moves` (160N байт — 81% избыточности), которые в документной модели отсутствуют.
 
 ---
