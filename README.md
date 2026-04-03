@@ -37,7 +37,7 @@ $$V_{\text{redundantMongo}} = (0.2N + 40) + (0.6N + 120) + 24N = 24.8N + 160$$
 
 **Доля логической избыточности:**
 
-$$R_{\text{logicalMongo}} = \frac{V_{\text{redundantMongo}}}{V_{\text{pure\_mongo}}} = \frac{24.8N + 160}{2280N + 5280}$$
+$$R_{\text{logicalMongo}} = \frac{V_{\text{redundantMongo}}}{V_{\text{pureMongo}}} = \frac{24.8N + 160}{2280N + 5280}$$
 
 При больших $N$:
 
