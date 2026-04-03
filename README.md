@@ -36,7 +36,7 @@ $$R_{\text{logicalmongo}} \to \frac{24.8}{2280} \approx 1.09\%$$
 
 Вычтем избыточные поля из чистого объёма (данные чистого объёма — из сводной таблицы выше):
 
-$$V_{\text{clean\_mongo}} = V_{\text{pure\_mongo}} - V_{\text{redundant\_mongo}} = (2280N + 5280) - (24.8N + 160) = 2255.2N + 5120 \text{ байт}$$
+$$V_{\text{cleanongo}} = V_{\text{puremongo}} - V_{\text{redundantmongo}} = (2280N + 5280) - (24.8N + 160) = 2255.2N + 5120 \text{ байт}$$
 
 Коэффициент раздутости при больших $N$:
 
