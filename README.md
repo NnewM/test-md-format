@@ -40,7 +40,7 @@ $$V_{\text{cleanongo}} = V_{\text{puremongo}} - V_{\text{redundantmongo}} = (228
 
 Коэффициент раздутости при больших $N$:
 
-$$\frac{V_{\text{pure\_mongo}}}{V_{\text{clean\_mongo}}} \to \frac{2280}{2255.2} \approx 1.011$$
+$$\frac{V_{\text{puremongo}}}{V_{\text{cleanmongo}}} \to \frac{2280}{2255.2} \approx 1.011$$
 
 MongoDB-модель избыточна на **≈ +1.1%** относительно минимально необходимого объёма данных.
 
