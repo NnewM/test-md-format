@@ -27,10 +27,10 @@ $$V_{redundant_mongo} = (0.85N + 170) + (1.65N + 330) + 62N = 64.5N + 500$$
 
 **Доля логической избыточности:**
 
-$$R_{\text{logical\_mongo}} = \frac{V_{\text{redundant\_mongo}}}{V_{\text{mongo}}} = \frac{64.5N + 500}{6605N + 9180}$$
+$$R_{\text{logicalmongo}} = \frac{V_{\text{redundantmongo}}}{V_{\text{mongo}}} = \frac{64.5N + 500}{6605N + 9180}$$
 
 При больших $N$:
 
-$$R_{\text{logical\_mongo}} \to \frac{64.5}{6605} \approx 0.98\%$$
+$$R_{\text{logicalmongo}} \to \frac{64.5}{6605} \approx 0.98\%$$
 
 ---
