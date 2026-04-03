@@ -20,15 +20,6 @@ $$V_{type} = 2 \cdot 12 \cdot N = 24N$$
 
 $$V_{\text{redundantMmongo}} = (0.2N + 40) + (0.6N + 120) + 24N = 24.8N + 160$$
 
----
-
-**Доля логической избыточности:**
-
-$$R_{\text{logicalmongo}} = \frac{V_{\text{redundantmongo}}}{V_{\text{puremongo}}} = \frac{24.8N + 160}{2280N + 5280}$$
-
-При больших $N$:
-
-$$R_{\text{logicalmongo}} \to \frac{24.8}{2280} \approx 1.09\%$$
 
 ---
 
