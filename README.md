@@ -61,7 +61,7 @@ $$V_{\text{redundantsql}} = (0.2N + 40) + (0.6N + 120) + 26N = 26.8N + 160$$
 
 **Доля логической избыточности:**
 
-$$R_{\text{logicalsql}} = \frac{V_{\text{redundant\_sql}}}{V_{\text{sql}}} = \frac{26.8N + 160}{3456N + 6800}$$
+$$R_{\text{logicalsql}} = \frac{V_{\text{redundantsql}}}{V_{\text{sql}}} = \frac{26.8N + 160}{3456N + 6800}$$
 
 При больших $N$:
 
