@@ -37,14 +37,24 @@ $$V_{\text{redundantMongo}} = (0.2N + 40) + (0.6N + 120) + 24N = 24.8N + 160$$
 
 **Доля логической избыточности:**
 
-$$R_{\text{logical\_mongo}} = \frac{V_{\text{redundant\_mongo}}}{V_{\text{pure\_mongo}}} = \frac{24.8N + 160}{2280N + 5280}$$
+$$R_{\text{logicalMongo}} = \frac{V_{\text{redundantMongo}}}{V_{\text{pure\_mongo}}} = \frac{24.8N + 160}{2280N + 5280}$$
 
 При больших $N$:
 
-$$R_{\text{logical\_mongo}} \to \frac{24.8}{2280} \approx 1.09\%$$
+$$R_{\text{logicalMongo}} \to \frac{24.8}{2280} \approx 1.09\%$$
 
 ---
+**Минимально необходимый объём данных (MongoDB):**
 
+Вычтем избыточные поля из чистого объёма (данные чистого объёма — из сводной таблицы выше):
+
+$$V_{\text{cleanMongo}} = V_{\text{pureMongo}} - V_{\text{redundantMongo}} = (2280N + 5280) - (24.8N + 160) = 2255.2N + 5120 \text{ байт}$$
+
+Коэффициент раздутости при больших $N$:
+
+$$\frac{V_{\text{pureMongo}}}{V_{\text{cleanMongo}}} \to \frac{2280}{2255.2} \approx 1.011$$
+
+MongoDB-модель избыточна на **≈ +1.1%** относительно минимально необходимого объёма данных.
 ---
 
 **Коэффициент раздутости (MongoDB):**
