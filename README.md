@@ -65,7 +65,7 @@ $$R_{\text{logicalsql}} = \frac{V_{\text{redundantsql}}}{V_{\text{sql}}} = \frac
 
 При больших $N$:
 
-$$R_{\text{logical\_sql}} \to \frac{26.8}{3456} \approx 0.78\%$$
+$$R_{\text{logicalsql}} \to \frac{26.8}{3456} \approx 0.78\%$$
 
 Логическая избыточность в SQL меньше, чем в MongoDB, так как в SQL не хранятся имена полей в каждой строке (4 байта на поле INT против 10–17 байт в BSON).
 
