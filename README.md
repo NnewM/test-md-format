@@ -42,7 +42,7 @@ $$V_{\text{cleanmongo}} = V_{\text{puremongo}} - V_{\text{redundantmongo}} = (22
 
 Коэффициент избыточности при больших $N$:
 
-$$\frac{V_{\text{puremongo}}}{V_{\text{cleanmongo}}} \to \frac{2280N}{2280N - 25N} \approx 1.011$$
+$$\frac{2280N}{2280N - 25N} \approx 1.011$$
 
 MongoDB-модель избыточна на **≈ +1.1%** относительно минимально необходимого объёма данных.
 
