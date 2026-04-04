@@ -1,16 +1,12 @@
+#### Формула общего объёма (MongoDB)
 
-**Формула общего объёма (SQL):**
+$$V_{\text{mongo}} = P \times 857 + N \times 6562 + B \times 918$$
 
-$$V_{\text{sql}} = \frac{N}{20} \times 383 + N \times 235 + 40N \times 74 + 10 \times 303 + (3.1N + 30) \times 131$$
+Подставляя P = N/20, B = 10:
 
-$$V_{\text{sql}} = 19.15N + 235N + 2960N + 3030 + 406.1N + 3930$$
+$$V_{\text{mongo}} = \frac{N}{20} \times 857 + N \times 6562 + 10 \times 918$$
 
-$$\boxed{V_{\text{sql}} \approx 3620N + 6960 \text{ байт}}$$
-
-При N = 1 000 партий: V ≈ 3.6 МБ.
-При N = 100 000 партий: V ≈ 362 МБ.
-
----
+$$\boxed{V_{\text{mongo}} \approx 6605N + 9180 \text{ байт}}$$
 
 **Объём логически избыточных данных (MongoDB):**
 
